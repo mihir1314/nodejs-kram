@@ -21,7 +21,7 @@ app.use(cors({
 app.use(cookieParser());
 
 const db = mysql.createConnection({
-  host: "127.0.0.1:3306",
+  host: "localhost",
   user: "u143691355_kram",
   password: "9Mihir!12",
   database: "u143691355_kram",
