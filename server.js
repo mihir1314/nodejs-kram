@@ -21,10 +21,10 @@ app.use(cors({
 app.use(cookieParser());
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "kram",
+  host: "ftp://excelcabs.in",
+  user: "u143691355_kram",
+  password: "9Mihir!12",
+  database: "u143691355_kram",
 });
 
 app.get("/", (req, res) => {
