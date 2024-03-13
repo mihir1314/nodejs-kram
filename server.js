@@ -14,7 +14,7 @@ const port = 3306;
 app.use("/uploads", express.static("Uploads"));
 app.use(express.json());
 app.use(cors({
-  origin:["http://mihirjariwala.rf.gd"],
+  origin:["http://localhost:5173/"],
   methods:["POST","GET"],
   credentials:true
 } ));
