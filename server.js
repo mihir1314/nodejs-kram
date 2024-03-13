@@ -39,6 +39,18 @@ db.connect((err) => {
 // Handle MySQL connection errors
 db.on('error', (err) => {
   console.error('MySQL connection error:', err);
+  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+    // Attempt to reconnect
+    db.connect((connectErr) => {
+      if (connectErr) {
+        console.error('Error reconnecting to MySQL:', connectErr);
+      } else {
+        console.log('Reconnected to MySQL server');
+      }
+    });
+  } else {
+    throw err;
+  }
 });
 
 app.get("/", (req, res) => {
