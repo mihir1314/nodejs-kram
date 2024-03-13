@@ -9,7 +9,7 @@ import multer from "multer";
 const salt = 10;
 
 const app = express();
-const port = 8081;
+const port = 3306;
 
 app.use("/uploads", express.static("Uploads"));
 app.use(express.json());
@@ -21,10 +21,10 @@ app.use(cors({
 app.use(cookieParser());
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "u143691355_kram",
-  password: "9Mihir!12",
-  database: "u143691355_kram",
+  host: "sql6.freesqldatabase.com",
+  user: "sql6691032",
+  password: "7ffnrBZHh9",
+  database: "sql6691032",
 });
 
 // Connect to MySQL
