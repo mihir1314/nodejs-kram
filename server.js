@@ -76,6 +76,14 @@ app.get("/product", (req, res) => {
   });
 });
 
+app.get("/orders", (req, res) => {
+  const sql = "SELECT * FROM product";
+  db.query(sql, (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
 app.get("/admin", (req, res) => {
   const sql = "SELECT * FROM admin";
   db.query(sql, (err, data) => {
