@@ -27,6 +27,20 @@ const db = mysql.createConnection({
   database: "u143691355_kram",
 });
 
+// Connect to MySQL
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+    return;
+  }
+  console.log('Connected to MySQL server');
+});
+
+// Handle MySQL connection errors
+db.on('error', (err) => {
+  console.error('MySQL connection error:', err);
+});
+
 app.get("/", (req, res) => {
   return res.json({ message: "from Backend Side" });
 });
