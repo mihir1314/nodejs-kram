@@ -56,9 +56,12 @@ db.on('error', (err) => {
 app.get("/", (req, res) => {
   return res.json({ message: "from Backend Side" });
 });
+app.get("/testing", (req, res) => {
+  return res.json({ message: "this is just for testing the root" });
+});
 
 app.get("/user", (req, res) => {
-  const sql = "SELECT * FROM user";
+  const sql = "SELECT * FROM user";  
   db.query(sql, (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
